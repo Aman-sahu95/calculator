@@ -1,0 +1,76 @@
+
+    :root {
+      --bg: #2f3238;
+      --panel: #030236;
+      --btn: #363f4e;
+      --btn-hover: #243349;
+      --accent: #3b82f6;
+      --text: #f5f6fa;
+      --allaccent: red;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: var(--bg);
+      font-family: system-ui, sans-serif;
+      color: var(--text);
+    }
+    .calculator {
+      background: var(--panel);
+      padding: 1rem;
+      border-radius: 12px;
+      width: clamp(260px, 90vw, 420px);
+      box-shadow: 0 8px 24px rgba(126, 75, 75, 0.35);
+    }
+    .screen {
+      background: #645959;
+      color: #0f0;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 2rem;
+      text-align: right;
+      overflow-x:auto;
+      white-space: nohwrap;
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .5rem;
+      margin-top: 1rem;
+    }
+    button {
+      padding: 1rem;
+      font-size: 1.25rem;
+      border: none;
+      border-radius: 10px;
+      background: var(--btn);
+      color: var(--text);
+      cursor: pointer;
+      transition: background .2s ease, transform .1s ease;
+
+    }
+    button:hover {
+      background: var(--btn-hover);
+    }
+    button:active {
+      transform: scale(.95);
+    }
+    .accent { background: var(--accent); }
+    .equals {
+      grid-row: span 2;
+    }
+    
+    .allaccent { background: var(--allaccent); }
+    .equals {
+      grid-row: span 4;
+    }
+    /* Responsive tweaks */
+    @media (max-width: 400px) {
+      .screen { font-size: 1.5rem; padding: .75rem; }
+      button { padding: .75rem; font-size: 1rem; }
+    }
+  
